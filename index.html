@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#8f1838">
+  <meta name="description" content="开源教学日历 · 所有日程为虚构示例">
+  <title>Web Coding Tutorial</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%238f1838'/%3E%3Ctext x='20' y='28' text-anchor='middle' font-size='25' fill='white'%3EW%3C/text%3E%3C/svg%3E">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">W</div>
+      <div>
+        <p class="eyebrow">OPEN SOURCE · LEARNING DEMO</p>
+        <h1>Web Coding Tutorial</h1>
+      </div>
+    </div>
+    <button class="add-button" id="openAdd" type="button"><span aria-hidden="true">＋</span> 添加事件</button>
+  </header>
+
+  <main>
+    <section class="summary" aria-label="学期概览">
+      <div>
+        <p class="date-range">HTML · CSS · JAVASCRIPT</p>
+        <h2>日历组件教学示例</h2>
+        <p class="lede">虚构课程与活动示例。手机与电脑读取同一份公开日程，本机草稿仅保存在当前浏览器。</p>
+      </div>
+      <div class="stats">
+        <div><strong id="courseCount">0</strong><span>课程日</span></div>
+        <div><strong id="raCount">0</strong><span>工作坊</span></div>
+        <div><strong>Demo</strong><span>虚构数据</span></div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="日历控制">
+      <div class="month-nav">
+        <button id="prevMonth" class="icon-button" type="button" aria-label="上一个月">‹</button>
+        <button id="monthTitle" class="month-title" type="button" aria-label="回到本月"></button>
+        <button id="nextMonth" class="icon-button" type="button" aria-label="下一个月">›</button>
+      </div>
+      <div class="view-switch" role="group" aria-label="视图选择">
+        <button class="active" data-view="month" type="button">月历</button>
+        <button data-view="agenda" type="button">日程</button>
+      </div>
+    </section>
+
+    <section class="calendar-shell">
+      <div id="syncStatus" class="sync-status" role="status"><span></span> 正在读取共享日历…</div>
+      <div id="monthView" class="month-view">
+        <div class="weekdays" aria-hidden="true">
+          <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+        </div>
+        <div id="calendarGrid" class="calendar-grid"></div>
+      </div>
+      <div id="agendaView" class="agenda-view" hidden></div>
+    </section>
+
+    <p class="demo-actions"><button id="exportEvents" type="button">导出日程 JSON</button> <button id="clearDrafts" type="button">清除本机草稿</button></p>
+    <section class="course-key" aria-label="课程图例">
+      <article class="course-card course-a">
+        <span class="course-dot"></span>
+        <div><strong>课程 A</strong><p>网页设计基础 · 示例</p></div>
+      </article>
+      <article class="course-card course-b">
+        <span class="course-dot"></span>
+        <div><strong>课程 B</strong><p>交互设计 · 示例</p></div>
+      </article>
+      <article class="course-card tutorial">
+        <span class="course-dot"></span>
+        <div><strong>Tutorial</strong><p>练习与答疑 · 示例</p></div>
+      </article>
+      <article class="course-card workshop">
+        <span class="course-dot"></span>
+        <div><strong>Workshop</strong><p>小组工作坊 · 示例</p></div>
+      </article>
+    </section>
+  </main>
+
+  <dialog id="eventDialog">
+    <form id="eventForm" method="dialog">
+      <div class="dialog-head">
+        <div><p class="eyebrow">LOCAL DRAFT</p><h2>添加示例草稿</h2></div>
+        <button id="closeDialog" class="icon-button" type="button" aria-label="关闭">×</button>
+      </div>
+      <p class="form-note">草稿仅保存在本浏览器。导出 JSON 并经维护者检查、提交发布后，才会成为所有设备可见的共享日程。请只填写虚构数据。</p>
+      <label>事件名称<input name="title" required maxlength="80" placeholder="例如：小组汇报"></label>
+      <div class="form-row">
+        <label>日期<input name="date" type="date" required></label>
+        <label>分类<select name="category"><option value="personal">个人</option><option value="deadline">截止日期</option><option value="study">学习</option></select></label>
+      </div>
+      <div class="form-row">
+        <label>开始时间<input name="start" type="time"></label>
+        <label>结束时间<input name="end" type="time"></label>
+      </div>
+      <label>备注<textarea name="notes" rows="3" maxlength="300" placeholder="地点、准备事项等（选填）"></textarea></label>
+      <button class="submit-button" type="submit">保存本机草稿</button>
+    </form>
+  </dialog>
+
+  <template id="eventTemplate">
+    <button class="event-pill" type="button"><span class="event-time"></span><span class="event-title"></span></button>
+  </template>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

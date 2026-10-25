@@ -1,0 +1,65 @@
+[
+  {
+    "id": "sample-1",
+    "date": "2026-10-05",
+    "title": "网页设计基础",
+    "start": "10:00",
+    "end": "12:00",
+    "category": "course-a",
+    "details": "虚构教学数据 · 示例教室"
+  },
+  {
+    "id": "sample-2",
+    "date": "2026-10-08",
+    "title": "交互设计",
+    "start": "10:00",
+    "end": "12:00",
+    "category": "course-b",
+    "details": "虚构教学数据 · 示例教室"
+  },
+  {
+    "id": "sample-3",
+    "date": "2026-10-12",
+    "title": "Tutorial 练习",
+    "start": "10:00",
+    "end": "12:00",
+    "category": "tutorial",
+    "details": "虚构教学数据 · 示例教室"
+  },
+  {
+    "id": "sample-4",
+    "date": "2026-10-19",
+    "title": "小组工作坊",
+    "start": "10:00",
+    "end": "12:00",
+    "category": "workshop",
+    "details": "虚构教学数据 · 示例教室"
+  },
+  {
+    "id": "sample-5",
+    "date": "2026-10-26",
+    "title": "阅读与讨论",
+    "start": "10:00",
+    "end": "12:00",
+    "category": "study",
+    "details": "虚构教学数据 · 示例教室"
+  },
+  {
+    "id": "sample-6",
+    "date": "2026-11-04",
+    "title": "项目展示",
+    "start": "10:00",
+    "end": "12:00",
+    "category": "personal",
+    "details": "虚构教学数据 · 示例教室"
+  },
+  {
+    "id": "sample-7",
+    "date": "2026-11-09",
+    "title": "示例截止日期",
+    "start": "",
+    "end": "",
+    "category": "deadline",
+    "details": "虚构教学数据 · 示例教室"
+  }
+]
